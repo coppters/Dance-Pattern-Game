@@ -7,23 +7,14 @@ var bgMusic = new Audio("./sounds/track2.wav");
 var words = ["Cheers! 🥂", "Fighting! 💪", "Great! 👍", "Bravo! 👏", "Amazing! 🌟", "Shine! ✨", "Smile! 😊", "Hope! 🌈", "Dream! 💭", "Love! ❤️", "Joy! 😄", "Wow! 😲", "Yes! ✅", "Go! 🏃", "Win! 🏆", "Sparkle! 🎇", "Thrive! 🌱", "Excel! 📈", "Believe! 🙏", "Triumph! 🎉"]
 
 // Start the game with a key press
-$(document).keypress(function() {
+$('#playButton').click(function() {
+    $('#startScreen').hide(); // Hide the entire start screen div
     if (!started) {
         $("#score").text(level);
         setTimeout(nextSequence, 100);
         started = true;
-        playSong();
+        playSong(); // Play the background music
     }
-});
-
-$(document).on('touchstart', function() {
-    if (!started) {
-        $("#score").text(level);
-        setTimeout(nextSequence, 100);
-        started = true;
-        playSong();
-    }
-    
 });
 
 // Start or interact with the game using arrow keys
@@ -135,4 +126,14 @@ function changeGif(gifName) {
     $("#danceGirl").attr("src","./images/" + gifName + ".gif");
 }
 
+$(document).on('touchstart', function() {
+    if (!started) {
+        // Reset the game state
+        startOver(); // Resets the game variables
 
+        // Start the game again
+        $("#score").text(level);
+        setTimeout(nextSequence, 100);
+        started = true;
+    }
+});
