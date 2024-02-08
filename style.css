@@ -91,7 +91,7 @@ body {
   border-radius: 20px;
 }
 
-@media (min-width: 319px) and (max-width: 480px) {
+@media (min-width: 375px) and (max-width: 768px) {
   .layout {
     display: flex;
     flex-direction: column-reverse;
