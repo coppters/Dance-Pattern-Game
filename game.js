@@ -18,6 +18,7 @@ $('#playButton').click(function() {
 });
 
 $(document).on('touchstart', function() {
+    $('#startScreen').hide();
     if (!started) {
         $("#score").text(level);
         setTimeout(nextSequence, 100);
