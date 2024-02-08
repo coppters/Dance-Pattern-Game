@@ -1,0 +1,117 @@
+* {
+  font-family: 'Press Start 2P', system-ui;
+  color: aliceblue;
+}
+
+body {
+    background-color: #1f1240;
+}
+
+.layout {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20%;
+  margin-top: 7%;
+}
+  
+.sidebar { 
+    flex-grow: 1;
+    background-color: rgba(240, 248, 255, 0.25); 
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.body {
+  flex-grow: 2;
+}
+
+.keys {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  width: 250px;
+  height: auto;
+}
+
+.arr {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  background: rgb(128, 128, 128);
+  color: white;
+  font-size: 20px;
+  border-right: 10px solid #565656;
+  border-bottom: 10px solid #4b4b4b;
+  border-left: 10px solid #505050;
+  border-top: 10px solid #5a5a5a;  
+  display: inline-block;
+  margin: 5px;
+  transition: all .05s linear;
+}
+
+.arr:active {
+    border-bottom: 8px solid #4b4b4b;
+    text-shadow: 0 0 10px white, 0 0 10px white, 0 0 20px white;    
+    transform: translate(0, 2px);
+  }
+
+
+.up {
+  position: relative;
+  top: -4px;
+}
+
+.chosen {
+  background-color: rgb(226, 73, 43);
+  text-shadow: 0 0 10px white;
+  border-right: 10px solid #6c0909;
+  border-bottom: 10px solid #9b1111;
+  border-left: 10px solid #cf1f1f;
+  border-top: 10px solid #fa0c0c;
+}
+
+.pressed {
+  border-bottom: 8px solid darken(grey, 20);
+  text-shadow: 0 0 10px white;
+  transform: translate(0, 2px);
+}
+  
+.body { 
+    grid-area: body; 
+}
+
+.bgGif {
+  position: absolute;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+@media (max-width: 480px) {
+  /* styles for mobile browsers smaller than 480px; (iPhone) */
+  .layout {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    margin-right: 25%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sidebar { 
+    flex-grow: 1; 
+  }
+
+  .keys {
+    width: 375px;
+    font-size: 7px;
+  }
+  
+  .body { 
+    flex-grow: 2; 
+  }
+}
