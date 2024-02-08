@@ -10,10 +10,10 @@ var words = ["Cheers! 🥂", "Fighting! 💪", "Great! 👍", "Bravo! 👏", "Am
 $('#playButton').click(function() {
     $('#startScreen').hide(); // Hide the entire start screen div
     if (!started) {
+        playSong();
         $("#score").text(level);
         setTimeout(nextSequence, 100);
         started = true;
-        playSong(); // Play the background music
     }
 });
 
