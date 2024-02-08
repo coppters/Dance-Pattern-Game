@@ -134,5 +134,7 @@ $(document).on('touchstart', function() {
         $("#score").text(level);
         setTimeout(nextSequence, 100);
         started = true;
+        playsong();
     }
+    
 });
