@@ -10,10 +10,19 @@ var words = ["Cheers! 🥂", "Fighting! 💪", "Great! 👍", "Bravo! 👏", "Am
 $('#playButton').click(function() {
     $('#startScreen').hide(); // Hide the entire start screen div
     if (!started) {
-        playSong();
         $("#score").text(level);
         setTimeout(nextSequence, 100);
         started = true;
+        playSong();
+    }
+});
+
+$(document).on('touchstart', function() {
+    if (!started) {
+        $("#score").text(level);
+        setTimeout(nextSequence, 100);
+        started = true;
+        playSong();
     }
 });
 
@@ -126,14 +135,4 @@ function changeGif(gifName) {
     $("#danceGirl").attr("src","./images/" + gifName + ".gif");
 }
 
-$(document).on('touchstart', function() {
-    if (!started) {
-        // Reset the game state
-        startOver(); // Resets the game variables
 
-        // Start the game again
-        $("#score").text(level);
-        setTimeout(nextSequence, 100);
-        started = true;
-    }
-});
