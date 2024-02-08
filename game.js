@@ -124,3 +124,15 @@ function animatePress(currentDirection) {
 function changeGif(gifName) {
     $("#danceGirl").attr("src","./images/" + gifName + ".gif");
 }
+
+$(document).on('touchstart', function() {
+    if (!started) {
+        // Reset the game state
+        startOver(); // Resets the game variables
+
+        // Start the game again
+        $("#score").text(level);
+        setTimeout(nextSequence, 100);
+        started = true;
+    }
+});

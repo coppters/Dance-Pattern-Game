@@ -91,7 +91,7 @@ body {
   border-radius: 20px;
 }
 
-@media (min-width: 375px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .layout {
     display: flex;
     flex-direction: column-reverse;
@@ -106,7 +106,8 @@ body {
   }
 
   .keys {
-    width: 375px;
+    max-width: 100%;
+    height: auto;
     font-size: 7px;
   }
   
