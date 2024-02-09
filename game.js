@@ -17,6 +17,16 @@ $('#playButton').click(function() {
     }
 });
 
+$(document).keydown(function(event) {
+    $('#startScreen').hide();
+    if (!started) {
+        $("#score").text(level);
+        setTimeout(nextSequence, 100);
+        started = true;
+        playSong();
+    }
+});
+
 $(document).on('touchstart', function() {
     $('#startScreen').hide();
     if (!started) {
